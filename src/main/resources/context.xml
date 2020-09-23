@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="pillow" class="flfe.ly.entity.Pillow">
+        <property name="name" value="枕头1"/>
+    </bean>
+    <bean id="bed" class="flfe.ly.entity.Bed">
+        <property name="pillow" ref="pillow" />
+    </bean>
+</beans>
