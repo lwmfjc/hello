@@ -1,7 +1,8 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
+apply plugin : "java"
 group 'spring'
 version '1.0-SNAPSHOT'
 
@@ -12,6 +13,16 @@ repositories {
 }
 ext {
     javaMainClass = "fife.ly.Main"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+task runWithJavaExec(type: JavaExec) {
+    group = "Execution"
+    description = "Run the main class with JavaExecTask"
+    classpath = sourceSets.main.runtimeClasspath
+    main = javaMainClass
 }
 dependencies {
     compile group: 'org.springframework',name: 'spring-context' , version: '5.2.9.RELEASE'
