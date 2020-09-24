@@ -1,7 +1,7 @@
-package fife.ly;
+package fife.ly.config;
 
-import flfe.ly.entity.Bed;
-import flfe.ly.entity.Pillow;
+import fife.ly.entity.Bed;
+import fife.ly.entity.Pillow;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

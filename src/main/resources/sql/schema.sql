@@ -1,0 +1,5 @@
+CREATE TABLE phone(
+    id VARCHAR(64) AUTO_INCREMENT NOT NULL,
+    name VARCHAR(32),
+    PRIMARY KEY (id)
+);

@@ -1,10 +1,8 @@
 package fife.ly;
 
-import flfe.ly.entity.Bed;
+import fife.ly.entity.Bed;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.sql.*;
 
 public class Main {
     public static void main(String[] args) {

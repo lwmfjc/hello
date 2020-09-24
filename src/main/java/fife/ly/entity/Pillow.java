@@ -1,4 +1,4 @@
-package flfe.ly.entity;
+package fife.ly.entity;
 
 public class Pillow {
     private String name;
