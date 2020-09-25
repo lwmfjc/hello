@@ -1,7 +1,11 @@
 import fife.ly.config.ConfigH2;
+import fife.ly.dao.PhoneDao;
+import fife.ly.entity.Phone;
 import org.junit.Test;
+import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
 
@@ -40,11 +44,21 @@ public class TestLy {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM phone");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
+                System.out.println(resultSet.getInt("id"));
                 System.out.println(resultSet.getString("name"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         context.close();
+    }
+    @Test
+    public void testJdbcTemple(){
+        ApplicationContext applicationContext=new AnnotationConfigApplicationContext(ConfigH2.class);
+        PhoneDao phoneDao = applicationContext.getBean(PhoneDao.class);
+        for (Phone p :
+                phoneDao.findAll() ) {
+            System.out.println(p);
+        };
     }
 }
